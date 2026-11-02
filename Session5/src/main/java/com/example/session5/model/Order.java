@@ -1,0 +1,80 @@
+package com.example.session5.model;
+
+import jakarta.persistence.*;
+
+import java.time.LocalDate;
+
+@Entity
+@Table(name = "orders")
+public class Order {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String orderCode;
+    private String customerName;
+    private Double totalPrice;
+    private String status;
+    private LocalDate createdAt;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getOrderCode() {
+        return orderCode;
+    }
+
+    public void setOrderCode(String orderCode) {
+        this.orderCode = orderCode;
+    }
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+
+    public Double getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(Double totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public LocalDate getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDate createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Order(Long id, String orderCode, String customerName, Double totalPrice, String status, LocalDate createdAt) {
+        this.id = id;
+        this.orderCode = orderCode;
+        this.customerName = customerName;
+        this.totalPrice = totalPrice;
+        this.status = status;
+        this.createdAt = createdAt;
+    }
+
+    public Order() {
+    }
+}
